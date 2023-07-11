@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Swipe Application</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="price">Rs %1$d</string>
+    <string name="product_name">Product Name</string>
+    <string name="selling_price">Selling Price</string>
+    <string name="tax_rate">Tax Rate</string>
+    <string name="submit">SUBMIT</string>
+    <string name="product">Product</string>
+    <string name="service">Service</string>
+
+
+    <string-array name="product_type">
+        <item>Product</item>
+        <item>Service</item>
+    </string-array>
+
+</resources>

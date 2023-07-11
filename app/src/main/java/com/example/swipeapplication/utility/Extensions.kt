@@ -1,0 +1,26 @@
+package com.example.swipeapplication.utility
+
+import android.content.Context
+import android.os.Environment
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.RequestBody
+import okhttp3.RequestBody.Companion.toRequestBody
+import java.io.File
+import java.text.SimpleDateFormat
+import java.util.Locale
+
+private const val FILENAME_FORMAT = "dd-MMM-yyyy"
+
+val timeStamp: String = SimpleDateFormat(
+    FILENAME_FORMAT,
+    Locale.US
+).format(System.currentTimeMillis())
+
+fun createCustomTempFile(context: Context): File {
+    val storageDir: File? = context.getExternalFilesDir(Environment.DIRECTORY_PICTURES)
+    return File.createTempFile(timeStamp, ".jpg", storageDir)
+}
+
+fun createPartFromString(stringData: String): RequestBody {
+    return stringData.toRequestBody("text/plain".toMediaTypeOrNull())
+}
